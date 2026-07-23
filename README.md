@@ -4,12 +4,12 @@
 
 **Crie uma enquete, compartilhe o link, veja os votos chegarem em tempo real.**
 
-[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
-[![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com)
-[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
-[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
-[![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org)
-[![Socket.io](https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white)](https://socket.io)
+[![status](https://img.shields.io/badge/status-em%20desenvolvimento-2ea44f)](#)
+[![node](https://img.shields.io/badge/node-22%2B-339933?logo=node.js&logoColor=white)](https://nodejs.org)
+[![react](https://img.shields.io/badge/react-18-61DAFB?logo=react&logoColor=black)](https://react.dev)
+[![express](https://img.shields.io/badge/express-4-000000?logo=express&logoColor=white)](https://expressjs.com)
+[![sqlite](https://img.shields.io/badge/sqlite-nativo-07405E?logo=sqlite&logoColor=white)](https://www.sqlite.org)
+[![socket.io](https://img.shields.io/badge/socket.io-realtime-010101?logo=socket.io&logoColor=white)](https://socket.io)
 
 </div>
 
