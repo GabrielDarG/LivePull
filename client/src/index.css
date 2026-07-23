@@ -1,0 +1,419 @@
+/* ============================================================
+   ESTILOS GLOBAIS
+   ============================================================
+   Nada aqui é obrigatório para o projeto funcionar — é só pra
+   ficar com uma cara legal no seu portfólio. Sinta-se livre
+   pra mudar cores e fontes à vontade, é uma ótima forma de
+   praticar CSS depois que a lógica já estiver funcionando.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #12131a;          /* fundo principal, quase preto azulado */
+  --surface: #1b1d27;     /* fundo dos cards */
+  --border: #2b2d3a;
+  --text: #e7e7ee;
+  --text-muted: #8b8d9c;
+  --accent: #7c5cff;      /* cor de destaque (botões, barras) */
+  --accent-hover: #6a4ce0;
+  --danger: #ff6b6b;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  /* Gradiente suave em vez de cor chapada — dá profundidade
+     sem chamar mais atenção que o conteúdo. */
+  background: radial-gradient(circle at 20% -10%, #23253a 0%, var(--bg) 45%),
+              linear-gradient(180deg, var(--bg) 0%, #0e0f15 100%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  margin: 0;
+}
+
+.page {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  color: var(--accent);
+}
+
+.hero p {
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+input[type="text"] {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--text);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.2);
+}
+
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.option-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.option-row input {
+  flex: 1;
+}
+
+.icon-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.icon-btn:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.icon-btn:active {
+  transform: scale(0.9);
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+  width: fit-content;
+}
+
+.primary-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  /* transform entra na transição -> o "encolher" ao clicar fica suave */
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 14px rgba(124, 92, 255, 0.25);
+}
+
+.primary-btn:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 6px 18px rgba(124, 92, 255, 0.35);
+}
+
+/* :active = enquanto o botão está sendo pressionado (mouse down).
+   Encolher levemente + tirar a sombra dá a sensação física de
+   "afundar" o botão, tipo um botão de verdade. */
+.primary-btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 6px rgba(124, 92, 255, 0.25);
+}
+
+.primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error {
+  color: var(--danger);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.muted {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.poll-list h2 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.poll-list ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.poll-list li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  transition: transform 0.12s ease, border-color 0.15s ease;
+}
+
+.poll-list li:hover {
+  transform: translateX(4px);
+  border-color: var(--accent);
+}
+
+.poll-list a {
+  color: var(--text);
+  text-decoration: none;
+  display: block;
+}
+
+.poll-list a:hover {
+  color: var(--accent);
+}
+
+.back-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.question {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+}
+
+.options-vote-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vote-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  transition: border-color 0.15s ease, transform 0.1s ease, background 0.15s ease;
+}
+
+.vote-btn:hover {
+  border-color: var(--accent);
+  background: #21232f;
+}
+
+.vote-btn:active {
+  transform: scale(0.98);
+  background: rgba(124, 92, 255, 0.12);
+}
+
+.bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.bar-track {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  height: 14px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  background: linear-gradient(90deg, var(--accent), #a68bff);
+  height: 100%;
+  /* easing com "leve exagero" no final (cubic-bezier) faz a barra
+     parecer que "assenta" no lugar, em vez de só parar seca */
+  transition: width 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+.total-votes {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.share-hint {
+  margin-top: 32px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.share-hint code {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  word-break: break-all;
+}
+
+/* ============================================================
+   NOVIDADES: compartilhamento, embed e overlay
+   ============================================================ */
+
+.footer-note {
+  text-align: center;
+  margin-top: -8px;
+}
+
+.share-toggle {
+  margin-top: 24px;
+  font-size: 0.85rem;
+}
+
+.share-box {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.share-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.share-item code {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  word-break: break-all;
+}
+
+/* --- EmbedPage: compacta, pensada para caber num iframe pequeno --- */
+.embed-page {
+  padding: 16px;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.embed-question {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  margin: 0 0 14px;
+}
+
+/* --- OverlayPage: fundo transparente, para OBS Browser Source --- */
+.overlay-page {
+  background: transparent;
+  padding: 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: white;
+  width: fit-content;
+}
+
+.overlay-question {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.4rem;
+  margin: 0 0 16px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+.overlay-bar-wrapper {
+  margin-bottom: 12px;
+  min-width: 320px;
+}
+
+.overlay-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  margin-bottom: 4px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+.overlay-bar-track {
+  background: rgba(255,255,255,0.15);
+  border-radius: 8px;
+  height: 18px;
+  overflow: hidden;
+  backdrop-filter: blur(2px);
+}
+
+.overlay-bar-fill {
+  background: var(--accent);
+  height: 100%;
+  transition: width 0.4s ease;
+}
